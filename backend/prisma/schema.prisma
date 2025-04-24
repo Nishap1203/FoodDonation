@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+enum Role {
+  DONOR
+  NGO
+  ADMIN
+}
+
+model Donation {
+  id        String   @id @default(cuid())
+  foodType  String
+  description String
+  donorId   String
+  expiryDate String
+  quantity Int?
+  location String?
+  status    String   @default("available") 
+  donor     User     @relation(fields: [donorId], references: [id])
+  personsServed Int     @default(0) 
+  wastedPersons Int     @default(0)  
+  claims    Claim[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model User {
+  id        String   @id @default(uuid())
+  name      String?
+  email     String   @unique
+  password  String?
+  latitude  Float?
+  longitude Float?
+  phone     String?  @unique
+  role      Role     @default(DONOR) 
+  address   String?
+  donations Donation[]
+  ngo       NGO?     
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NGO {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  phone     String
+  address   String
+  latitude  Float
+  longitude Float
+  status    String   @default("pending") 
+  userId    String   @unique
+  requests  Request[] 
+  claims       Claim[]
+  user      User     @relation(fields: [userId], references: [id]) // Define relation here
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Request {
+  id         String   @id @default(uuid())
+  ngoId      String
+  ngo        NGO      @relation(fields: [ngoId], references: [id])
+  foodName   String
+  quantity   Int
+  status     String   @default("pending")  // e.g., pending, fulfilled, canceled
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Claim {
+  id          String   @id @default(cuid())
+  donationId  String
+  ngoId       String
+  quantity    Int
+  status      String   @default("pending") // pending, approved, rejected, completed
+  donation    Donation @relation(fields: [donationId], references: [id])
+  ngo         NGO      @relation(fields: [ngoId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

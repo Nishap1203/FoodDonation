@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Hello Foundation",
+      "email": "helloasdad@gmail.com",
+      "phone": "1234567890",
+      "address": "1, Iscon, Ahmedabad",
+      "latitude": 23.88946,
+      "longitude": 72.41982,
+      "foodRequired": "200 units",
+      "status": "verified",
+      "createdAt": "2025-02-19T06:08:16.201Z",
+      "updatedAt": "2025-02-19T06:46:13.968Z"
+    },
+    {
+      "name": "Food For All",
+      "email": "foodforall@gmail.com",
+      "phone": "9876543210",
+      "address": "SG Highway, Ahmedabad",
+      "latitude": 23.07518,
+      "longitude": 72.52548,
+      "foodRequired": "500 units",
+      "status": "verified",
+      "createdAt": "2025-02-19T07:10:20.321Z",
+      "updatedAt": "2025-02-19T07:45:50.561Z"
+    },
+    {
+      "name": "Hunger Relief Trust",
+      "email": "hungerrelief@gmail.com",
+      "phone": "8563214790",
+      "address": "Navrangpura, Ahmedabad",
+      "latitude": 23.0300,
+      "longitude": 72.5600,
+      "foodRequired": "350 units",
+      "status": "verified",
+      "createdAt": "2025-02-19T08:15:10.654Z",
+      "updatedAt": "2025-02-19T08:50:23.789Z"
+    },
+    {
+      "name": "Care and Share",
+      "email": "careandshare@gmail.com",
+      "phone": "7589632147",
+      "address": "Bodakdev, Ahmedabad",
+      "latitude": 23.0435,
+      "longitude": 72.5074,
+      "foodRequired": "100 units",
+      "status": "pending",
+      "createdAt": "2025-02-19T09:20:30.890Z",
+      "updatedAt": "2025-02-19T09:55:40.432Z"
+    },
+    {
+      "name": "Food Bank Ahmedabad",
+      "email": "foodbank@gmail.com",
+      "phone": "7418529630",
+      "address": "Satellite, Ahmedabad",
+      "latitude": 23.0309,
+      "longitude": 72.5027,
+      "foodRequired": "450 units",
+      "status": "verified",
+      "createdAt": "2025-02-19T10:30:50.543Z",
+      "updatedAt": "2025-02-19T11:05:20.678Z"
+    }
+  ]
+  
