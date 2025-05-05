@@ -13,7 +13,7 @@ const ForgotPasswordc = () => {
       await forgotPassword(email);
       notifySuccess("Reset email sent!");
     } catch {
-      notifyError("Error sending reset email.");
+      notifyError("Error sending reset email.",Error);
     }
   };
 
@@ -29,7 +29,7 @@ const ForgotPasswordc = () => {
 
         {/* Email Input */}
         <div className="mb-4">
-          <label className="block text-white font-semibold font-medium">
+          <label className="block text-white font-semibold">
             Email
           </label>
           <input

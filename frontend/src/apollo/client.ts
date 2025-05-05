@@ -1,20 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { ApolloClient, InMemoryCache,HttpLink } from "@apollo/client";
-
-// const client = new ApolloClient({
-//   link: new HttpLink({
-//     uri: "http://localhost:5000/graphql",
-//     credentials: "include",
-//   }),
-//   cache: new InMemoryCache(),
-// });
-
-// export default client;
-
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000/graphql",
+  // uri: "http://localhost:5000/graphql",
+  uri: "http://https://fooddonation-system.onrender.com/graphql",
   credentials: "include",
 });
 const authLink = setContext((_, { headers }) => {

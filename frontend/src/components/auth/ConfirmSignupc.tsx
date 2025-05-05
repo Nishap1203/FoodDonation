@@ -128,7 +128,7 @@ const ConfirmSignupc = () => {
           {loading ? "Verifying..." : "Confirm"}
         </button>
 
-        {/* ✅ Resend OTP Button */}
+        {/*  Resend OTP Button */}
         <button
           type="button"
           onClick={handleResendOTP}
